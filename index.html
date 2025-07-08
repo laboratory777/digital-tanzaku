@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>七夕の短冊</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+          <img src="image/title.png" alt="タイトル画像" id="titleImage">
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>短冊を書こう</h2>
+      <form id="wishForm">
+        <label class="wish-input">
+          願いごと:
+          <input type="text" id="wishInput" required maxlength="50">
+        </label>
+        <label class="name-input">
+          名前:
+          <input type="text" id="nameInput" required maxlength="20">
+        </label>
+        <label>
+          色の選び方:
+          <select id="colorMode">
+            <option value="random">ランダム</option>
+            <option value="choose">選ぶ</option>
+          </select>
+        </label>
+
+        <label id="colorPickerLabel" class="hidden">
+          短冊の色:
+          <input type="color" id="colorInput" value="#FF69B4">
+        </label>
+
+        <label>
+          文字色:
+          <select id="textColor">
+            <option value="white">白</option>
+            <option value="black">黒</option>
+          </select>
+        </label>
+
+        <button type="submit">短冊の飾り方</button>
+      </form>
+    </section>
+
+    <section class="bamboo-area" id="bambooArea">
+      <img src="image/bamboo.png" alt="笹の木" id="bambooImage">
+      <!-- 短冊はここに JS で追加される -->
+    </section>
+  </main>
+
+  <!-- モーダル表示 -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+     <div id="modalTanzakuWrapper">
+      <div id="modalWish"></div>
+      <div id="modalName"></div>
+     </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
